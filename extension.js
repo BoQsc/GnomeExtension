@@ -82,7 +82,7 @@ function _hideHello() {
 // Show text actor, this function is executed after clicking a button.
 function _showHello() {
     if (!text) {
-        text = new St.Label({ style_class: 'helloworld-label', text: "Hello, world!" });
+        text = new St.Label({ style_class: 'helloworld-label', text: "Hello world here!" });
         Main.uiGroup.add_actor(text);
     }
 

@@ -73,7 +73,7 @@ const Tweener = imports.ui.tweener; /** @returns https://gitlab.gnome.org/GNOME/
 
 let text, button;
 
-
+const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 
 

@@ -73,10 +73,8 @@ const Tweener = imports.ui.tweener; /** @returns https://gitlab.gnome.org/GNOME/
 
 let text, button;
 
-function _hideHello() {
-    Main.uiGroup.remove_actor(text);
-    text = null;
-}
+const Me = ExtensionUtils.getCurrentExtension();
+const good = Me.imports.good;
 
 
 // Show text actor, this function is executed after clicking a button.

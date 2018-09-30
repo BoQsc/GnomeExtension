@@ -71,36 +71,37 @@ const Tweener = imports.ui.tweener; /** @returns https://gitlab.gnome.org/GNOME/
 */
 
 
-let text, button;
+
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
+const Functions = Me.imports.functions;
 
-
+let label, button;
 
 // Show text actor, this function is executed after clicking a button.
 function _showHello() {
-    if (!text) {
-        text = new St.Label({ style_class: 'helloworld-label', text: "Hello world, mate!" });
-        Main.uiGroup.add_actor(text);
-    }
-
-    text.opacity = 255;
+    label = new St.Label();
+    label.style_class = 'helloworld-label';
+    label.text = "Hello world";
+    label.opacity = 255;
+    Main.uiGroup.add_actor(label);
+    
 
     let monitor = Main.layoutManager.primaryMonitor;
 
     // Calculate center of the monitor for text placement.
-    text.set_position(monitor.x + Math.floor(monitor.width / 2 - text.width / 2),
-                      monitor.y + Math.floor(monitor.height / 2 - text.height / 2));
+    label.set_position(monitor.x + Math.floor(monitor.width / 2 - label.width / 2),
+                      monitor.y + Math.floor(monitor.height / 2 - label.height / 2));
 
     
     // Use Tweener ease out animation to lower opacity in 2 seconds 
     // and then execute _hideHello to remove text actor from the User Interface
-    Tweener.addTween(text,
+    Tweener.addTween(label,
                      { opacity: 0,
                        time: 2,
                        transition: 'easeOutQuad',
-                       onComplete: _hideHello });
+                       onComplete: Functions._hideHello });
 }
 
 
@@ -131,6 +132,7 @@ So, to connect one actor to one event: actor.connect(eventName, functionToCallWh
     //... When the button is pressed - execute following function...
     // in the enable() function we then assign button to the panel right box.
     button.connect('button-press-event', _showHello);
+
 }
 
 // What will happen when you enable extension by either Gnome Tweaks or gsettings.

@@ -2,6 +2,19 @@ const St = imports.gi.St;
 const Main = imports.ui.main;
 
 
+class PanelButton extends St.Bin {
+	constructor(){	
+	super();
+	this.style_class = "panel-button";
+	this.reactive = true;
+	this.can_focus = true;
+	this.x_fill = true;
+	this.y_fill = true;	
+	this.track_hover = true;
+        }
+};
+
+
 class Extension {
     constructor() {
         this.label = null;
@@ -9,14 +22,7 @@ class Extension {
     }
 
     enable() {
-        this.button = new St.Bin({
-            style_class: 'panel-button',
-            reactive: true,
-            can_focus: true,
-            x_fill: true,
-            y_fill: false,
-            track_hover: true
-        });
+ 	this.button = new PanelButton();
         this.icon = new St.Icon({
             icon_name: 'system-run-symbolic',
             style_class: 'system-status-icon'

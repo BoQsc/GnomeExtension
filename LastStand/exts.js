@@ -3,24 +3,24 @@ const Main = imports.ui.main;
 
 
 class PanelButton extends St.Bin {
-	constructor(){	
-	super();
-	this.style_class = "panel-button";
-	this.reactive = true;
-	this.can_focus = true;
-	this.x_fill = true;
-	this.y_fill = false;	
-	this.track_hover = true;
-        }
+    constructor() {
+        super();
+        this.style_class = "panel-button";
+        this.reactive = true;
+        this.can_focus = true;
+        this.x_fill = true;
+        this.y_fill = false;
+        this.track_hover = true;
+    }
 };
 
 class ButtonIcon extends St.Icon {
-	constructor(){
-	super();
-	this.style_class = "system-run-symbolic";
-	this.icon_name = "system-run-symbolic";
-	this.icon_size = 25;
-	}
+    constructor() {
+        super();
+        this.style_class = "system-run-symbolic";
+        this.icon_name = "system-run-symbolic";
+        this.icon_size = 25;
+    }
 
 };
 
@@ -32,7 +32,7 @@ class Extension {
     }
 
     enable() {
- 	this.button = new PanelButton();
+        this.button = new PanelButton();
         this.icon = new ButtonIcon();
 
 

@@ -16,6 +16,7 @@ class PanelButton extends St.Bin {
 
 
 /**
+ * this.style_class @see https://developer.gnome.org/st/3.24/StWidget.html#StWidget--style-class
  * this.icon_name @see https://developer.gnome.org/st/3.24/st-st-icon.html#StIcon--icon-name
  * this.icon_size @see https://developer.gnome.org/st/3.24/st-st-icon.html#StIcon--icon-size
  *

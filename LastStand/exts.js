@@ -14,6 +14,13 @@ class PanelButton extends St.Bin {
     }
 };
 
+
+/**
+ * this.icon_name @see https://developer.gnome.org/st/3.24/st-st-icon.html#StIcon--icon-name
+ * this.icon_size @see https://developer.gnome.org/st/3.24/st-st-icon.html#StIcon--icon-size
+ *
+ */
+
 class ButtonIcon extends St.Icon {
     constructor() {
         super();
